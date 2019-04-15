@@ -1,9 +1,13 @@
 {
+"companyName": "GlowiesProductions",
+"productName": "RCNS",
+"dataUrl": "webgl.data.unityweb",
+"asmCodeUrl": "webgl.asm.code.unityweb",
+"asmMemoryUrl": "webgl.asm.memory.unityweb",
+"asmFrameworkUrl": "webgl.asm.framework.unityweb",
 "TOTAL_MEMORY": 268435456,
-"dataUrl": "WebGL.data.unityweb",
-"asmCodeUrl": "WebGL.asm.code.unityweb",
-"asmMemoryUrl": "WebGL.asm.memory.unityweb",
-"asmFrameworkUrl": "WebGL.asm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
 "splashScreenStyle": "Light",
-"backgroundColor": "#80858B"
+"backgroundColor": "#828080"
 }
