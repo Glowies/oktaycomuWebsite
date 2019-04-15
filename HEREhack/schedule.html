@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="../assets/boo_icon.png">
+
+  <title>HERE Hackathon</title>
+
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+
+  <script src="../js/jquery.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/socketio.js"></script>
+
+  <link rel="stylesheet" href="css/index.css">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Saira" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="https://js.cit.api.here.com/v3/3.0/mapsjs-ui.css" />
+  <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-core.js"></script>
+  <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-service.js"></script>
+  <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+  <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><span class="navTxt">toGo</span></a>
+    </div>
+    <div class="navbar-collapse collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html"><span class="navbar-btn">Find an Event</span></a></li>
+        <li><a href="schedule.html"><span class="navbar-btn">Schedule an Event</span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="map"></div>
+<div class="container" style="position: fixed; top:50%; overflow:scroll; height:50%; width: 100%;">
+  <div class="container formClass">
+    <div class="row">
+      <div class="col-xs-12">
+        <form class="scheduleForm" action="" method="">
+          <h2>Event Information</h2>
+          <div class="form-group">
+            <label for="eName" >Event Name</label>
+            <input type="text" name="eventname" placeholder="Name" id="eName" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="eLoc" >Location</label>
+            <div class="input-group">
+              <input type="text" placeholder="Location" id="eLoc" disabled class="form-control" required>
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button" id="pickLocation">Pick Location</button>
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cat">Event Category</label>
+            <select class="form-control" name="cat" id="eCat">
+              <option value="food">Food</option>
+              <option value="art">Art</option>
+              <option value="kids">Kids</option>
+              <option value="sports">Sports</option>
+              <option value="social">Social</option>
+              <option value="tech">Tech</option>
+              <option value="culture">Culture</option>
+              <option value="cinema">Cinema</option>
+              <option value="leisure">Leisure</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="eDesc" >Description</label>
+            <input type="textarea" name="eventname" placeholder="Name" id="eDesc" class="form-control" required>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="scheduleCheck" required> Scheduled Event
+            </label>
+          </div>
+          <div id="timeStuff">
+            <div class="form-group">
+              <label for="time1" >Average Duration in Minutes</label>
+              <input type="number" name="time1" id="eDuration" required class="form-control" min="0" step="1">
+            </div>
+            <div class="form-group">
+              <label for="time2" >Available Hours:</label>
+              <input type="time" name="time2" id="eAvaStart" required class="form-control">
+              <label for="time3" style="margin-left:20px">to</label>
+              <input type="time" name="time3" id="eAvaEnd" required class="form-control">
+            </div>
+
+          </div>
+
+        </form>
+        <button type="submit" class="btn btn-primary" name="button" id="sbBtn" onClick="">Submit Event</button>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/searchMap.js"></script>
+</body>
+</html>

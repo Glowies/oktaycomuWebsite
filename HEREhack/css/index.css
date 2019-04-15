@@ -1,0 +1,63 @@
+body {
+  font-family: 'Comfortaa', cursive;
+}
+
+.navbar-inverse {
+  background: #426eb7;
+  font-family: 'Saira', sans-serif;
+}
+
+#colorLogo {
+  width: 60px;
+  height: 60px;
+}
+
+.navTxt {
+  color: white;
+  font-weight: 800;
+  font-size: 180%;
+}
+
+.navbar-btn{
+  color:white;
+}
+
+.myHr {
+  opacity: 1;
+}
+
+.secondPart {
+  width: 60%;
+}
+
+#map {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  height: 40%;
+  top: 50px;
+  border-bottom: 2px solid black;
+}
+
+#markerImg {
+  width: 100%;
+  height: 100px;
+}
+
+.result {
+  background: ghostwhite;
+  opacity: 1;
+  border-radius: 7px;
+  border: 1px solid gray;
+  width: 90%;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.centeredText {
+  text-align: center;
+  margin: auto;
+  font-weight: 800;
+  padding: 5px;
+}

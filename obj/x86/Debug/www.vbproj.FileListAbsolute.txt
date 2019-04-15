@@ -1,0 +1,4 @@
+C:\wamp\www\bin\Debug\WindowsApplication.exe
+C:\wamp\www\bin\Debug\WindowsApplication.pdb
+C:\wamp\www\obj\x86\Debug\WindowsApplication.exe
+C:\wamp\www\obj\x86\Debug\WindowsApplication.pdb

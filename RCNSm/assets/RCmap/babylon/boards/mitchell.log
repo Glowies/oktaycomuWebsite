@@ -1,0 +1,16 @@
+	Exporter version: 3.0.4, Blender version: 2.75 (sub 0)
+========= Conversion from Blender to Babylon.js =========
+	Python World class constructor completed
+	WARNING: No active camera has been assigned, or is not in a currently selected Blender layer
+	processing begun of mesh:  polySurface1
+		processing begun of Standard material:  pasted__lambert2SG
+		num positions      :  1512
+		num normals        :  1512
+		num uvs            :  3024
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1512
+========= Writing of scene file started =========
+========= Writing of scene file completed =========
+========= end of processing =========
+elapsed time:  0 min, 0.049 secs

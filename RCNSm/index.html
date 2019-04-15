@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link rel="manifest" href="manifest.json">
+
+    <script src="js/hand.js"></script>
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <link rel="shortcut icon" href="assets/boo_icon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <style>
+        .ui{
+            position: fixed;
+            opacity: 0.7;
+            top: -1000px;
+            z-index:1;
+        }
+        .highlighted{
+            color:white;
+            background:#008080 !important;
+        }
+
+        .rcbtn{
+            position: fixed;
+
+        }
+
+    </style>
+</head>
+<body style="-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;">
+
+<div class="container-fluid">
+    <canvas id="renderCanvas" style="position:fixed;top:0px;left:0px;width:100%;height:100%"></canvas>
+
+    <button id="back" type="button" class="button button-stable ui" style="opacity:0"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+    <button id="up" type="button" class="button button-stable ui button-small" style="opacity:0"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></button>
+    <button id="down" type="button" class="button button-stable ui button-small" style="opacity:0"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></button>
+    <button id="right" type="button" class="button button-stable ui button-small" style="opacity:0"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
+    <button id="left" type="button" class="button button-stable ui button-small" style="opacity:0"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></button>
+
+    <button id="floor" class="button button-stable ui" style="opacity:1">Robert College</button>
+
+    <div class="progress ui" id="barout" style="width:700px; opacity: 1; "></div>
+
+    <div class="card ui" id="legend" style="width:300px">
+      <div class="item item-text-wrap" id="roomInfoBody">
+        Tap near a room's door to view information about it...
+      </div>
+      <div class="item item-divider">
+        Room Information
+      </div>
+    </div>
+
+    <button id="help" type="button" class="btn btn-default ui" data-toggle="modal" data-target="#tutorial" style="opacity:0.7"><strong> ? </strong></button>
+
+    <button id="search" type="button" class="btn btn-default ui" data-toggle="collapse" data-target="#options" style="opacity:0.7"><strong><span class="glyphicon glyphicon-search" aria-hidden="true"></span></strong></button>
+
+    <div id="optionsDiv" class="ui" style="opacity:1; width:100%; left:0px; top:-1000px;">
+        <div class="panel-group" id="accordion" style="position: absolute;width: 100%;bottom: 0;margin: 0">
+        <div class="panel panel-primary">
+        <div id="options" class="panel-collapse collapse">
+        <div class="panel-body" style="background-color: lightgray"> <!-- Options Body Start -->
+            <div id="searchrec" class="btn-group-vertical" role="group" style="width:100%;height:220px">
+                <div class="input-group">
+                    <input id="searchbar" type="text" class="form-control" placeholder="W123 ~OR~ Headmaster" style="padding-left:1em">
+                    <span class="input-group-btn">
+                        <button id="searchbutton" class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                    </span>
+                </div>
+            </div>
+            <button id="searchClose" type="button" class="btn btn-default" data-toggle="collapse" data-target="#options" style="width:100%"><strong><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></strong></button>
+        </div><!-- Options Body End -->
+      </div>
+
+      <div class="panel-heading" data-toggle="collapse" href="#options">
+        <h4 class="panel-title">
+            Options
+        </h4>
+      </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="modal fade" id="tutorial" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="position:fixed">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                    <h3 class="modal-title" id="myModalLabel">About RCNS</h3>
+                  </div>
+                  <div class="modal-body">
+                    <h4><b>Navigation</b></h4>
+                    Drag to rotate the camera. Tap on a floor to zoom in. Use the back button on the top left to zoom back out. Navigation arrows on the bottom right may be used to change floors while zoomed in.
+                    <br>
+                    <h4><b>Search Bar</b></h4>
+                    Search bar queries may consist of the room ID or the room specification. Building codes:
+                    <ul>
+                    <li>Sage : S</li>
+                    <li>Woods : W</li>
+                    <li>Mitchell : M</li>
+                    <li>Gould : G</li>
+                    <li>Suna Kirac / Nejat Eczacibasi : SK</li>
+                    <li>Feyyaz Berker : FB</li>
+                    <li>Bingham : B</li>
+                    </ul>
+                    Room suggestions that match the search query are shown below the search bar. Tapping one of the suggestions zooms in to the the floor that the room is on and places a pink marker at the door of the room.
+                    <br>
+                    <h4><b>Legend</b></h4>
+                    Staircase / Elevator : <strong style="color:blue;font-size:150%">&#9679</strong> <br>
+          			Building Exit : <strong style="color:green;font-size:150%">&#9679</strong> <br>
+          			Destination : <strong style="color:pink;font-size:150%">&#x2193</strong> <br>
+          			Information Target : <strong style="color:yellow;font-size:150%">&#x2193</strong> <br>
+                  <div class="modal-footer">
+                  Contact information: <br><b>Oktay Comu : </b> comokt.18@robcol.k12.tr <br><b>Sinan Karabocuoglu : </b> karsin.18@robcol.k12.tr<br>Any feedback or support is appreciated.
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+</div>
+</body>
+
+<script src="js/socketio.js"></script>
+<script src="js/babylon.js"></script>
+<script src="js/RCmap/rooms.js"></script>
+<script src="js/RCmap/loadMap.js"></script>
+<script src="js/RCmap/click.js"></script>
+<script src="js/RCmap/init.js"></script>
+<script src="js/RCmap/socket.js"></script>
+
+</html>
