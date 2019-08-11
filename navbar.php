@@ -33,7 +33,7 @@
                 <li><a href="../about"><span class="glyphicon glyphicon-flash"></span> Author</a></li>
             </ul>
             <p class="navbar-text navbar-right"></p>
-            <button type="button" class="btn btn-default navbar-btn navbar-right active" onclick="this.blur(); chrome.webstore.install();" id="install-button">Try Swift Snake &nbsp; <img src='../assets/chromestore.png' style="height:22px"></button>
+            <a type="button" class="btn btn-default navbar-btn navbar-right active" href="https://chrome.google.com/webstore/detail/swift-snake-3d-popup/lencaglpgihlglecbdkfhelldkbdholc" onclick="this.blur();" id="install-button">Try Swift Snake &nbsp; <img src='../assets/chromestore.png' style="height:22px"></a>
            </div>
         </div>
     </nav>
