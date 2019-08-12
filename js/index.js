@@ -3,6 +3,7 @@ if (BABYLON.Engine.isSupported()) {
     var engine = new BABYLON.Engine(canvas, true);
 
     length = 12;
+    delta = 1;
     line = [];
     point = [];
     var init = 5;
@@ -10,6 +11,7 @@ if (BABYLON.Engine.isSupported()) {
     point[1] = new BABYLON.Vector3(init,0,init);
     point[2] = new BABYLON.Vector3(init,0,-init);
     point[3] = new BABYLON.Vector3(-init-1,0,-init);
+    currentPoint = point[3];
 
     BABYLON.SceneLoader.Load("assets/", "cube.babylon", engine, function (scene) {
         globalScene = scene;
@@ -40,9 +42,14 @@ if (BABYLON.Engine.isSupported()) {
             ground = new BABYLON.Mesh.CreateGround('ground1', 10000, 10000, 2, scene);
             ground.position.y = -0.01;
 
-            line[0] = BABYLON.Mesh.CreateLines("lines", point, scene);
-            line[0].color = new BABYLON.Color3(0, 0, 0);
-
+            line[0] = BABYLON.Mesh.CreateLines("lines", [], scene);
+            line[1] = BABYLON.Mesh.CreateLines("lines", [point[0], point[1]], scene);
+            line[2] = BABYLON.Mesh.CreateLines("lines", [point[1], point[2]], scene);
+            line[3] = BABYLON.Mesh.CreateLines("lines", [point[2], point[3]], scene);
+            for(var i=0; i<line.length; i++)
+            {
+                line[i].color = new BABYLON.Color3(0, 0, 0);
+            }
             drawLine();
 
             scene.activeCamera = camera;
@@ -74,10 +81,30 @@ $(window).resize(function(){
 function drawLine(){
     var i = point.length;
     var angle = Math.atan2(point[i-4].z - point[i-1].z, point[i-4].x - point[i-1].x);
-    point[i] = new BABYLON.Vector3(point[i-1].x + length*Math.cos(angle), 0, point[i-1].z + length*Math.sin(angle));
-    line[i] = BABYLON.Mesh.CreateLines("lines", [point[i-1],point[i]], globalScene);
-    line[i].color = new BABYLON.Color3(0, 0, 0);
-    //camera.radius+= 1;
-    length+= 0.6;
-    setTimeout(drawLine,500);
+
+    if((Math.pow(currentPoint.x - point[i-1].x, 2) + Math.pow(currentPoint.z - point[i-1].z, 2)) < Math.pow(delta, 2)){
+        point[i] = new BABYLON.Vector3(point[i-1].x + length*Math.cos(angle), 0, point[i-1].z + length*Math.sin(angle));
+        currentPoint = new BABYLON.Vector3(point[i-1].x, point[i-1].y, point[i-1].z);
+        // Correct previous line
+        line[i-1].dispose();
+        line[i-1] = BABYLON.Mesh.CreateLines("lines", [point[i-2], currentPoint], globalScene);
+        line[i-1].color = new BABYLON.Color3(0, 0, 0);
+        // Create new line
+        line[i] = BABYLON.Mesh.CreateLines("lines", [point[i-1],point[i-1]], globalScene);
+        line[i].color = new BABYLON.Color3(0, 0, 0);
+        //camera.radius+= 1;
+        length += 0.6;
+        delta += 0.06;
+    }
+    i = point.length;
+    angle = Math.atan2(point[i-5].z - point[i-2].z, point[i-5].x - point[i-2].x);
+
+    currentPoint.x += delta*Math.cos(angle);
+    currentPoint.z += delta*Math.sin(angle);
+
+    line[i-1].dispose();
+    line[i-1] = BABYLON.Mesh.CreateLines("lines", [point[i-2], currentPoint], globalScene);
+    line[i-1].color = new BABYLON.Color3(0, 0, 0);
+
+    setTimeout(drawLine,50);
 }
