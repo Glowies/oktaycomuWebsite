@@ -1,0 +1,55 @@
+<html>
+<head>
+<script type="text/javascript" src="1jiw9epElcK_0_easyxdm-v2.4.19.3.js"></script><script type="text/javascript" src="1jiw9epElcK_0_ua-parser.min.js"></script><script type="text/javascript" src="1vxKXGNaLtr_0_tess2.min.js"></script><script type="text/javascript" src="1vxKXGNaLtr_0_csg.min.js"></script><script type="text/javascript" src="aZS9YbvfqUX_0_jquery.min.js"></script><script type="text/javascript" src="aZS9YbvfqUX_0_handlebars.runtime.js"></script><script type="text/javascript" src="c0HjtqUm7Wz_0_three.min.js"></script><script type="text/javascript" src="c0HjtqUm7Wz_0_tween.js"></script><script type="text/javascript" src="widget.js"></script>
+<script type="text/javascript">
+    window.onload = function() {
+        
+        var args = {};
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for(var i = 0; i < hashes.length; i++)
+        {
+            var nameValuePair = hashes[i].split('=');
+            if (nameValuePair.length > 1) {
+                args[nameValuePair[0]] = nameValuePair[1];
+            } else {
+                args[nameValuePair[0]] = true;
+            }
+        }
+
+        
+        var rt = window.creativePlatformRuntime;
+        var generatorCriteria = {'exportedSymbol' : 'shapeGenerator'};
+        var generatorLib = rt.findLibrary(generatorCriteria);
+        if (generatorLib) {
+            
+            var connectorCriteria = {'exportedSymbol' : 'Connector'};
+            var connectorLib = rt.findLibrary(connectorCriteria);
+            if (connectorLib) {
+                
+                var container = document.getElementById("embedContainer");
+                var header = document.getElementById("embedContainerHeader");
+                var footer = document.getElementById("embedContainerFooter");
+
+                var playerParams = {
+                    "library": generatorLib,
+                    "parent": container,
+                    "footer": footer,
+                    "header": header
+                };
+                var connector = connectorLib.exports.Connector.getConnector("default");
+                connector.init(playerParams);
+                connector.ready();
+            }
+        }
+    };
+</script>
+</head>
+<body>
+    <div id="embedContainerHeader" style="display:none;"></div>
+    <div id="embedContainer" style="width:100%; height:100%; position:relative;"></div>
+    <div id="embedContainerFooter" style="display:none;"></div>
+    <div id="loadingIndicator" style="position: absolute; background-color: white; z-index: 999; left: 0px; top: 0px; width: 100%; height: 100%; display: table;"/>
+        <p style="display: table-cell; vertical-align: middle; text-align: center; font-size: 18px; font-family: arial; ">Initializing...</p>
+    </div>
+</body>
+</html>
