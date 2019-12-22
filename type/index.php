@@ -75,7 +75,7 @@
                 $("#downloadButton").click(function(){
                     player.shapeGeneratorResult(function(result){
                         if(result && Conversions)
-                            saveString(Conversions.toAsciiSTLFromMesh3D(result.mesh), "3Dtype.stl");
+                            saveString(Conversions.toAsciiSTLFromMesh3D(result.mesh), "type.stl");
                     });
                 });
             }

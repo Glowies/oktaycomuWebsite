@@ -1,0 +1,15 @@
+#button {
+    position:fixed; left:100px; top:100px; width:200px; height: 200px;
+    background-color: white;
+    border: dashed;
+    border-color: darkred;
+    border-width: 10px;
+    color: #00ff0c;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Arial;
+
+}
+#text {
+    vertical-align: middle;
+}

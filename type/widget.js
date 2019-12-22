@@ -37692,7 +37692,7 @@ var _Materials = {
 
             //'default'
             case 'default':
-                mat = new THREE.MeshLambertMaterial( { color: 0xE0FFE0, ambient: 0xff2200, shading: THREE.FlatShading, side: THREE.DoubleSide } );
+                mat = new THREE.MeshLambertMaterial( { color: 0xffffff, ambient: 0xff2200, shading: THREE.FlatShading, side: THREE.DoubleSide } );
                 setLightParams(mat, 0.25, 0.1, 0.5, '0x111111');
                 break;
 
@@ -38100,7 +38100,7 @@ _Viewer.prototype = {
             CoreLibrary.Plugin.panic("WebGL is not supported.");
         }
 
-        this.renderer.setClearColor(0x268E26, 1);
+        this.renderer.setClearColor(0xFFC0CB, 1);
         this.renderer.setSize( this._getElementWidth(), this._getElementHeight() );
 
         this.scene = new THREE.Scene();
@@ -45000,8 +45000,8 @@ var TypeGenerator = {
                 "displayName": "Text",
                 "type": "string",
                 "maxLength": 64,
-                "default": "G",
-                "singleLine": true
+                "singleLine": "true",
+                "default": "G"
             },
             {
                 "id": "body",
@@ -45025,7 +45025,7 @@ var TypeGenerator = {
                 "type": "float",
                 "rangeMin": 0,
                 "rangeMax": 2,
-                "default": 0.08
+                "default": 0
             },
             {
                 "id": "nickHeight",
@@ -45087,7 +45087,7 @@ var TypeGenerator = {
                 1,0,0,0,
                 0,1,0,0,
                 0,0,1,0,
-                -sketchBox.center().x, -pointSize/6, bodySize+0.001, 1
+                -sketchBox.center().x, 0, bodySize+0.001, 1
             ]);
             params["width"] = sketchBox.length() + 2 * params["margin"];
 
@@ -45105,7 +45105,7 @@ var TypeGenerator = {
         });
     },
     createBody : function(params, callback){
-        var height = params["point"] * 1110/750; // 1110 = 860 + 250
+        var height = params["point"] * 1000/750;
         var bodySize = params["body"];
         var halfWidth = params["width"] / 2;
         var nickHeight = params["nickHeight"];
