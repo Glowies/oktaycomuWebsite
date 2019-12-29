@@ -25,7 +25,7 @@
           <div class="container">
             <h1 class="display-4">Swift Snake 3D</h1>
             <p class="lead">A small extension that will let you play snake whenever you want.</p>
-            <button type="button" class="btn btn-default" onclick="this.blur(); chrome.webstore.install();" id="install-button">Try Swift Snake &nbsp; <img src='../assets/chromestore.png' style="height:22px"></button>
+              <a type="button" class="btn btn-default" href="https://chrome.google.com/webstore/detail/swift-snake-3d-popup/lencaglpgihlglecbdkfhelldkbdholc" onclick="this.blur();" id="install-button">Try Swift Snake &nbsp; <img src='../assets/chromestore.png' style="height:22px"></a>
           </div>
         </div>
 

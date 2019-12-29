@@ -6,34 +6,33 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Glowies</a>
+          <a class="navbar-brand" href="#">glowies</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href=""><span class="glyphicon glyphicon-home"></span> Main</a></li>
+                <li><a href=""> main</a></li>
                 <li class="">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tower"></span> Games<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> games<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="pongsingle">Singleplayer Pong</a></li>
-                        <li><a href="boo">Boo Chase</a></li>
-                        <li><a href="tron">Tron</a></li>
-                        <li><a href="swiftSnake">Swift Snake 3D</a></li>
-                        <li><a href="quoridor">Quoridor</a></li>
+                        <li><a href="pongsingle">singleplayer pong</a></li>
+                        <li><a href="boo">boo chase</a></li>
+                        <li><a href="tron">tron</a></li>
+                        <li><a href="swiftSnake">swift snake</a></li>
+                        <li><a href="quoridor">quoridor</a></li>
                     </ul>
                 </li>
                 <li class="">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-eye-open"></span> Simulations<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">simulations<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="ant">Langton's Ant</a></li>
-                        <li><a href="leaptest">Leap Bones</a></li>
-                        <li><a href="pi">PI Calculator</a></li>
-                        <li><a href="fractal">Fractal Creator</a></li>
+                        <li><a href="leaptest">leap bones</a></li>
+                        <li><a href="fractal">fractal creator</a></li>
                     </ul>
                 </li>
-                <li><a href="about"><span class="glyphicon glyphicon-flash"></span> Author</a></li>
+                <li><a href="about">author</a></li>
             </ul>
             <p class="navbar-text navbar-right"></p>
-            <a type="button" class="btn btn-default navbar-btn navbar-right active" href="https://chrome.google.com/webstore/detail/swift-snake-3d-popup/lencaglpgihlglecbdkfhelldkbdholc" onclick="this.blur();" id="install-button">Try Swift Snake &nbsp; <img src='assets/chromestore.png' style="height:22px"></a>
+            <a type="button" class="btn btn-default navbar-btn navbar-right active" href="https://chrome.google.com/webstore/detail/swift-snake-3d-popup/lencaglpgihlglecbdkfhelldkbdholc" onclick="this.blur();" id="install-button">try swift snake &nbsp; <img src='assets/chromestore.png' style="height:22px"></a>
            </div>
         </div>
     </nav>

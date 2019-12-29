@@ -23,7 +23,6 @@
 
 <body>
     <?php include_once('navbarMain.php'); ?>
-    <h1 style="position:fixed;left:100px;z-index:1">Patience</h1>
     <canvas id="renderCanvas" style="position:fixed;top:0px;width:100%;height:100%"></canvas>
 </body>
 <script src="js/babylon.js"></script>
