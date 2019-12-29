@@ -13,7 +13,7 @@ if (BABYLON.Engine.isSupported()) {
     point[3] = new BABYLON.Vector3(-init-1,0,-init);
     currentPoint = point[3];
 
-    BABYLON.SceneLoader.Load("assets/", "cube.babylon", engine, function (scene) {
+    BABYLON.SceneLoader.Load("../assets/", "cube.babylon", engine, function (scene) {
         globalScene = scene;
 
         scene.executeWhenReady(function () {

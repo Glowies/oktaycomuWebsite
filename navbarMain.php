@@ -24,7 +24,7 @@
                 <li class="">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">simulations<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="ant">Langton's Ant</a></li>
+                        <li><a href="ant">langtons Ant</a></li>
                         <li><a href="leaptest">leap bones</a></li>
                         <li><a href="fractal">fractal creator</a></li>
                     </ul>
