@@ -20,7 +20,7 @@ if (BABYLON.Engine.isSupported()) {
         scene.executeWhenReady(function () {
             light = new BABYLON.HemisphericLight("Hemi0", new BABYLON.Vector3(-2, 5, -3), scene);
 
-            setSkyBox();
+            //setSkyBox();
 
             camera = new BABYLON.ArcRotateCamera("ArcRotateCamera", 0, 0, 0, BABYLON.Vector3.Zero(), scene);
             camera.setPosition(new BABYLON.Vector3(0, 110, -100));
@@ -29,12 +29,12 @@ if (BABYLON.Engine.isSupported()) {
             ground = new BABYLON.Mesh.CreateGround('ground1', 130, 130, 2, scene);
             ground.material = new BABYLON.StandardMaterial("texture3", scene);
             ground.material.diffuseTexture = new BABYLON.Texture("../assets/grid.png", scene);
-            ground.material.diffuseTexture.uScale = 200;
-            ground.material.diffuseTexture.vScale = 200;
+            ground.material.diffuseTexture.uScale = 0;
+            ground.material.diffuseTexture.vScale = 0;
             ground.material.diffuseTexture.hasAlpha = false;
 
             scene.ambientColor = new BABYLON.Color3(1, 1, 1);                 // TO
-            ground.material.diffuseColor = new BABYLON.Color3(0, 0, 0);       // PREVENT
+            ground.material.diffuseColor = new BABYLON.Color3(0.4, 0.4, 0.4);       // PREVENT
             ground.material.specularColor = new BABYLON.Color3(0, 0, 0);      // LIGHT
             ground.material.ambientColor = new BABYLON.Color3(1,1,1);         // REFLECTION
 
@@ -53,7 +53,7 @@ if (BABYLON.Engine.isSupported()) {
 
             wall[2].forEach(function(wall){
                 wall.material = new BABYLON.StandardMaterial('sideWallMat',scene);
-                wall.material.diffuseColor = new BABYLON.Color3(0.2,0.2,0.2);
+                wall.material.diffuseColor = new BABYLON.Color3(1,1,1);
             });
 
             BABYLON.SceneLoader.ImportMesh("", "assets/", "tron.babylon", globalScene, function (newMeshes) {

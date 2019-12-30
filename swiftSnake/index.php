@@ -2,73 +2,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Oktay Comu">
-    <meta name="description" content="About Swift Snake 3D">
-    <link rel="shortcut icon" href="../assets/boo_icon.png">
-
-    <title>Glowies</title>
-
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-
-    <script src="../js/jquery.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-
     <?php include_once('../headImport.php'); ?>
+
+    <title>glowies - swift snake</title>
+    <meta name="description" content="About Swift Snake 3D">
 </head>
 
 <body role="document" style="background-color: white; height:100%; -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none; -o-user-select:none;">
-    <div id="main" class="container theme-showcase" role="main">
+    <header>
         <?php include_once('../navbar.php'); ?>
-
-        <div class="jumbotron jumbotron-fluid" style="background-image: url('assets/jumbotron_background.png'); background-repeat: no-repeat; background-position: right; background-size: contain">
+    </header>
+    <main role="main">
+    <div class="container" align="center">
+        <div class="jumbotron jumbotron-fluid" align="left" style="background-image: url('assets/jumbotron_background.png'); background-repeat: no-repeat; background-position: right; background-size: contain">
           <div class="container">
             <h1 class="display-4">Swift Snake 3D</h1>
             <p class="lead">A small extension that will let you play snake whenever you want.</p>
-              <a type="button" class="btn btn-default" href="https://chrome.google.com/webstore/detail/swift-snake-3d-popup/lencaglpgihlglecbdkfhelldkbdholc" onclick="this.blur();" id="install-button">Try Swift Snake &nbsp; <img src='../assets/chromestore.png' style="height:22px"></a>
+              <a type="button" class="btn btn-primary" href="https://chrome.google.com/webstore/detail/swift-snake-3d-popup/lencaglpgihlglecbdkfhelldkbdholc" onclick="this.blur();" id="install-button">Try Swift Snake &nbsp; <img src='../assets/chromestore.png' style="height:22px"></a>
           </div>
         </div>
 
-        <div class="panel panel-default">
+        <div class="panel panel-default" align="left">
             <div class="panel-body">
 
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Registration</a></li>
-                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Instructions</a></li>
-                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Scoring System</a></li>
-                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Credits</a></li>
+                    <li role="presentation" class="nav-item"><a href="#home" class="nav-link active" aria-controls="home" role="tab" data-toggle="tab" aria-selected="true">Registration</a></li>
+                    <li role="presentation" class="nav-item"><a href="#profile" class="nav-link" aria-controls="profile" role="tab" data-toggle="tab" aria-selected="false">Instructions</a></li>
+                    <li role="presentation" class="nav-item"><a href="#messages" class="nav-link" aria-controls="messages" role="tab" data-toggle="tab" aria-selected="false">Scoring System</a></li>
+                    <li role="presentation" class="nav-item"><a href="#settings" class="nav-link" aria-controls="settings" role="tab" data-toggle="tab" aria-selected="false">Credits</a></li>
                 </ul>
-
+                <br>
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane active" id="home">
-                        <div class="page-header">
+                    <div role="tabpanel" class="tab-pane fade show active" id="home">
+                        <div class="page-header" align="center">
                             <h2>Creating an Account Using Google</h2>
                         </div>
                         <div class="thumbnail">
-                            <img class="img-rounded" src="assets/reg_0.png">
+                            <img class="img-fluid rounded mx-auto d-block" src="assets/reg_0.png">
                             <div class="caption">
                                 <h3>1. Signing In Using Google</h3>
                                 <p>Clicking on the <kbd>Sign in with Google</kbd> button will open up a pop-up window prompting you to sign in with a Google account. You may create a new Google account using the pop-up window or log-in to an existing account. All in-game scores will be bound to your Google account.</p>
                             </div>
                         </div>
                         <div class="thumbnail">
-                            <img class="img-rounded" src="assets/reg_1.png">
+                            <img class="img-fluid rounded mx-auto d-block" src="assets/reg_1.png">
                             <div class="caption">
                                 <h3>2. Picking a Display Name</h3>
                                 <p>After signing in with Google, you will be prompted to pick a display name. This is the name that will be displayed alongside your scores on the global leaderboards. Your display name has to be less than 16 characters long and cannot contain special characters. Type your username into the white text-box and proceed by clicking the blue <kbd>Confirm</kbd> button.</p>
                             </div>
                         </div>
                         <div class="thumbnail">
-                            <img class="img-rounded" src="assets/reg_2.png">
+                            <img class="img-fluid rounded mx-auto d-block" src="assets/reg_2.png">
                             <div class="caption">
                                 <h3>3. Viewing Your Profile</h3>
                                 <p>You can view your profile by clicking your Google profile picture on the top right of the pop-up window. Here, you can see the e-mail and display name associated with your Google account.</p>
                             </div>
                         </div>
                         <div class="thumbnail">
-                            <img class="img-rounded" src="assets/reg_3.png">
+                            <img class="img-fluid rounded mx-auto d-block" src="assets/reg_3.png">
                             <div class="caption">
                                 <h3>4. Signing Out</h3>
                                 <p>If you want to sign out in order to switch accounts, you can do so by clicking the red <kbd>Sign Out</kbd> button below the profile window.</p>
@@ -78,40 +71,40 @@
                         Experiencing problems? Contact: <a href="mailto:6l0w135@gmail.com">6l0w135@gmail.com</a>
                         <hr>
                     </div>
-                    <div role="tabpanel" class="tab-pane" id="profile">
-                        <div class="page-header">
+                    <div role="tabpanel" class="tab-pane fade" id="profile">
+                        <div class="page-header" align="center">
                             <h2>How to Play Swift Snake</h2>
                         </div>
                         <div class="thumbnail">
-                            <img class="img-rounded" src="assets/objects.png">
+                            <img class="img-fluid rounded mx-auto d-block" src="assets/objects.png">
                             <div class="caption">
                                 <h3>The Basics</h3>
                                 <p>Classic snake rules apply... You start out as a small purple 'head' and your goal is to grow a long 'tail' for this head by gathering food. Colliding with a wall or your own tail will cause you to lose the game. No second chances.</p>
                             </div>
                         </div>
                         <div class="thumbnail">
-                            <img class="img-rounded" src="assets/tutorial.png">
+                            <img class="img-fluid rounded mx-auto d-block" src="assets/tutorial.png">
                             <div class="caption">
                                 <h3>Controls</h3>
                                 <p>As explained in the small tutorial, the snake can be controlled using the <kbd>Arrow Keys</kbd> or the <kbd>W</kbd>, <kbd>A</kbd>, <kbd>S</kbd>, <kbd>D</kbd> keys on your keyboard. The game starts when you press the <kbd>ENTER</kbd> key.</p>
                             </div>
                         </div>
                         <div class="thumbnail">
-                            <img class="img-rounded" src="assets/2D.gif">
+                            <img class="img-fluid rounded mx-auto d-block" src="assets/2D.gif">
                             <div class="caption">
                                 <h3>2D Mode</h3>
                                 <p>If 3D snake isn't your cup of tea, you can always go back to regular old 2D snake using the <kbd>2D</kbd> button on the bottom left of the pop-up window.</p>
                             </div>
                         </div>
                         <div class="thumbnail">
-                            <img class="img-rounded" src="assets/panning.gif">
+                            <img class="img-fluid rounded mx-auto d-block" src="assets/panning.gif">
                             <div class="caption">
                                 <h3>Panning the Camera</h3>
                                 <p>The 3D camera can be panned by clicking and dragging your mouse.</p>
                             </div>
                         </div>
                         <div class="thumbnail">
-                            <img class="img-rounded" src="assets/scrolling.gif">
+                            <img class="img-fluid rounded mx-auto d-block" src="assets/scrolling.gif">
                             <div class="caption">
                                 <h3>Zooming In and Out</h3>
                                 <p>You can zoom the 3D camera in and out using the scroll wheel of your mouse.</p>
@@ -121,12 +114,12 @@
                         Experiencing problems? Contact: <a href="mailto:6l0w135@gmail.com">6l0w135@gmail.com</a>
                         <hr>
                     </div>
-                    <div role="tabpanel" class="tab-pane" id="messages">
-                        <div class="page-header">
+                    <div role="tabpanel" class="tab-pane fade" id="messages">
+                        <div class="page-header" align="center">
                             <h2>Length, Combo and Score</h2>
                         </div>
                         <div class="thumbnail">
-                            <img class="img-rounded" src="assets/scoring.png">
+                            <img class="img-fluid rounded mx-auto d-block" src="assets/scoring.png">
                             <div class="caption">
                                 <h3>Length</h3>
                                 <p>Length is the most basic form of points. Each food you gather grows your tail and adds one point to your length.</p>
@@ -151,24 +144,21 @@
                         Experiencing problems? Contact: <a href="mailto:6l0w135@gmail.com">6l0w135@gmail.com</a>
                         <hr>
                     </div>
-                    <div role="tabpanel" class="tab-pane" id="settings">
+                    <div role="tabpanel" class="tab-pane fade" id="settings">
                         <br>
                         <div class="media">
-                            <div class="media-left media-middle">
-                                <img class="media-object img-rounded" src="assets/oktfaces_0.jpg" width="64px">
-                            </div>
+                            <img class="align-self-start mr-3" src="assets/oktfaces_0.jpg" width="64px">
                             <div class="media-body">
-                                <h2 class="media-heading">Developer</h2>
+                                <h4 class="media-heading">Developer</h2>
                                 Designed and developed by <strong>Oktay Comu.</strong><br>
                                 E-mail: <a href="mailto:6l0w135@gmail.com">6l0w135@gmail.com</a>
                             </div>
                         </div>
+                        <hr>
                         <div class="media">
-                            <div class="media-left media-middle">
-                                <img class="media-object img-rounded" src="assets/oktfaces_1.jpg" width="196px">
-                            </div>
+                            <img class="align-self-start mr-3" src="assets/oktfaces_1.jpg" width="196px">
                             <div class="media-body">
-                                <h2 class="media-heading">Libraries</h2>
+                                <h4 class="media-heading">Libraries</h2>
                                 <strong>CSS and Javascript Libraries Used:</strong><br>
                                 <ul>
                                     <li>Babylon.js v3.3.0</li>
@@ -187,5 +177,6 @@
             </div>
         </div>
     </div>
+    </main>
 </body>
 </html>

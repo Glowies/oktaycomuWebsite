@@ -64,6 +64,10 @@ $(document).ready(function(){
     fixUI();
 });
 
+$(document).click(function(){
+    fixUI();
+});
+
 $(window).resize(function(){
     engine.resize();
     fixUI();

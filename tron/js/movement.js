@@ -81,6 +81,10 @@ $(window).keydown(function(e){
                 setTimeout(p1KeyIntReset,keyIntDelay)
             }
             break;
+        case " ":
+            $("#alert").html("");
+            resetPositions();
+            startGame();
     }
 });
 

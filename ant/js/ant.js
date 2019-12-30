@@ -327,7 +327,7 @@ function fixUI(){
     var height = $('#renderCanvas').height();
     var width = $('#renderCanvas').width();
 
-    $('#wallEditor').offset({left:20,top:height - 265});
+    $('#wallEditor').offset({left:20,top:height - 310});
     $('#help').offset({left:width - 70,top:height - 70});
     $('#counter').offset({left:width - 100,top:80});
 }

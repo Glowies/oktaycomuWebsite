@@ -2,43 +2,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Oktay Comu">
+    <?php include_once('../headImport.php'); ?>
+
+    <title>glowies - about</title>
     <meta name="description" content="About the author Oktay Comu.">
-    <link rel="shortcut icon" href="../assets/boo_icon.png">
-
-    <title>Glowies</title>
-
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
-
-    <script src="../js/jquery.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
 
     <style>
-        body {
+        .fancy-body {
             background-image: url("../assets/patatOS.png");
             background-repeat: no-repeat;
             background-size:cover;
         }
     </style>
-
-    <?php include_once('../headImport.php'); ?>
 </head>
 
-<body role="document" style="background-color:black;height:100%; -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none; -o-user-select:none;">
-<div id="main" class="container theme-showcase" role="main">
-    <?php include_once('../navbar.php'); ?>
+<body role="document" style="background-color:white;height:100%; -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none; -o-user-select:none;">
+
+    <header>
+        <?php include_once('../navbar.php'); ?>
+    </header>
+    <main role="main">
     <div class="row">
-        <div class="col-sm-4" style="color:white">
+        <div class="col-6 col-sm-4" style="color:white"></div>
+        <div class="col-6 col-sm-4" style="color:white">
             <h1 style="color:black; -moz-user-select: all; -webkit-user-select: all; -ms-user-select:all; user-select:all; -o-user-select:all;"><kbd><samp>6l0w135@gmail.com</samp></kbd></h1>
-            <div class="panel panel-default">
-                <div class="panel-body" style="color:black">
+            <div class="card border-secondary">
+                <div class="card-body" style="color:black">
                     Designed and developed by <strong>Oktay Comu.</strong>
                 </div><br>
             </div>
-            <div class="panel panel-default">
-                <div class="panel-body" style="color:black">
+            <div class="card border-secondary">
+                <div class="card-body" style="color:black">
                     CSS and Javascript Libraries Used:<br>
                     <ul>
                         <li>Babylon.js v3.3.0</li>
@@ -55,6 +49,6 @@
             </div>
         </div>
     </div>
-</div>
+    </main>
 </body>
 </html>
