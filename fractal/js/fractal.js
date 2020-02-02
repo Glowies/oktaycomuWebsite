@@ -62,6 +62,7 @@ if (BABYLON.Engine.isSupported()) {
 
 $(document).ready(function(){
     fixUI();
+    initUI();
 });
 
 $(document).click(function(){
@@ -72,6 +73,13 @@ $(window).resize(function(){
     engine.resize();
     fixUI();
 });
+
+function initUI(){
+    let domObjects = [$("#optionsDiv"), $("#buttonsDiv"), $("#help"), $("#alertDiv")];
+    domObjects.forEach(function(obj){
+       obj.fadeTo(1024, 1);
+    });
+}
 
 function fixUI(){
     var height = $('#renderCanvas').height();
