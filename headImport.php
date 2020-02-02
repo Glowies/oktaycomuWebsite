@@ -9,6 +9,7 @@
 
 <!-- IMPORTS -->
 <link rel="stylesheet" href="../import/css/bootstrap.min.css">
+<link rel="stylesheet" href="../dist/css/simUI.css">
 <script src="../import/js/jquery.js"></script>
 <script src="../import/js/popper.min.js"></script>
 <script src="../import/js/bootstrap.min.js"></script>
