@@ -25,11 +25,12 @@
     <div class="row">
         <div class="col-6 col-sm-4" style="color:white"></div>
         <div class="col-6 col-sm-4" style="color:white">
-            <h1 style="color:black; -moz-user-select: all; -webkit-user-select: all; -ms-user-select:all; user-select:all; -o-user-select:all;"><kbd><samp>6l0w135@gmail.com</samp></kbd></h1>
+            <h1 style="color:black; -moz-user-select: all; -webkit-user-select: all; -ms-user-select:all; user-select:all; -o-user-select:all;">About</h1>
             <div class="card border-secondary">
                 <div class="card-body" style="color:black">
-                    Designed and developed by <strong>Oktay Comu.</strong>
-                </div><br>
+                    Designed and developed by <strong>Oktay Comu.</strong><br>
+                    For business inquiries: <a href="mailto:6l0w135@gmail.com"><kbd><samp>6l0w135@gmail.com</samp></kbd></a>
+                </div>
             </div>
             <div class="card border-secondary">
                 <div class="card-body" style="color:black">

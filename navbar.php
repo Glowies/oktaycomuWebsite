@@ -38,7 +38,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="../about">author</a>
+                <a class="nav-link" href="../about">about</a>
             </li>
 
         </ul>
