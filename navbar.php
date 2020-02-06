@@ -5,7 +5,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <!-- NAVBAR ITEMS START -->
         <ul class="navbar-nav">
 
@@ -32,6 +32,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="simDropdown">
                     <a class="dropdown-item" href="../ant">Langton's Ant</a>
+                    <a class="dropdown-item" href="../hexwave">hex wave</a>
                     <a class="dropdown-item" href="../leaptest">leap bones</a>
                     <a class="dropdown-item" href="../fractal">fractal creator</a>
                 </div>
